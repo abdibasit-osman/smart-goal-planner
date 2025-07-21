@@ -1,0 +1,11 @@
+{
+  "goals": [
+    {
+      "id": "9850",
+      "title": "bottle of water",
+      "targetAmount": 50,
+      "savedAmount": 500,
+      "deadline": "2025-07-20"
+    }
+  ]
+}
