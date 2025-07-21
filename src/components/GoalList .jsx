@@ -54,6 +54,23 @@ const GoalList = () => {
       <input type="number" name="deposit" placeholder="KES deposit" required />
       <button type="submit">Deposit</button>
     </form>
+
+    <button
+          style={{ marginLeft: '10px', color: 'red' }}
+          onClick={() => {
+            if (window.confirm(`Are you sure you want to delete "${goal.title}"?`)) {
+              fetch(`http://localhost:3001/goals/${goal.id}`, {
+                method: 'DELETE',
+              })
+                .then(() => {
+                  setGoals(goals.filter((g) => g.id !== goal.id));
+                })
+                .catch((error) => console.error('Error deleting goal:', error));
+            }
+          }}
+        >
+          Delete
+    </button>
             </li>
           ))}
         </ul>
